@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TienBoRai</title>
-    <link rel="stylesheet" href="/PanelVip/styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="manifest" href="/manifest.json">
+
     <style>
         .message {
             margin-top: 10px;
@@ -85,13 +87,11 @@
 
                 if (response.status === 200) {
                     messageDiv.className = 'message success';
-                    // Lưu trạng thái đăng nhập vào localStorage
                     localStorage.setItem('isLoggedIn', 'true');
                     localStorage.setItem('loggedInKey', keyInput);
-                    // Chuyển hướng đến trang menu
                     setTimeout(() => {
                         window.location.href = 'menu/menu.html';
-                    }, 1000); // Chờ 1 giây để người dùng thấy thông báo thành công
+                    }, 1000); 
                 } else {
                     messageDiv.className = 'message error';
                 }
@@ -101,7 +101,6 @@
             }
         }
 
-        // Chuyển đổi màn hình
         setTimeout(() => {
             const splashScreen = document.getElementById('splashScreen');
             const loginScreen = document.getElementById('loginScreen');
@@ -115,5 +114,12 @@
             }, 500);
         }, 3000);
     </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/js/sw.js').then(() => {
+            console.log('Service Worker registered');
+          });
+        }
+      </script>
 </body>
 </html>
