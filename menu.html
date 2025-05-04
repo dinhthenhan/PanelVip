@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TienBoRai</title>
+    <link rel="stylesheet" href="../styles/menu.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <h1>TRACK BOT</h1>
+                <p class="author">By TienBoRai <span class="verified">✔</span></p>
+            </div>
+            <div class="menu">
+                <a href="../info/info.html" class="info-button">
+                    <i class="fas fa-info"></i>
+                </a>
+            </div>
+        </header>
+        <div class="profile">
+            <img src="../images/logo.png" alt="Profile Picture" class="profile-pic">
+            <div class="profile-info">
+                <h2>Nguyen Xuan Tien</h2>
+                <p>Menu support you easy to find the Aim, tracking the head and fix problem on game when u play game</p>
+            </div>
+        </div>
+        <div class="options">
+            <div class="option">
+                <span><i class="fa-solid fa-crosshairs"></i> TRACKING</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="option">
+                <span><i class="fa-solid fa-gear"></i> FIX RECOIL</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="option">
+                <span><i class="fa-solid fa-gun"></i> AIMFOV</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="option">
+                <span><i class="fa-solid fa-shield-virus"></i> ANTIBLACK LIST</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+        <div class="buttons">
+            <p>RUN ON CLIENT</p>
+            <div class="button-group">
+                <a href="freefireth://">FF TH</a>
+                <a href="freefiremax://">FF MAX</a>
+            </div>
+        </div>
+        <footer>
+            <p>by TienBoRai</p>
+        </footer>
+    </div>
+    <script>
+        if (!localStorage.getItem('isLoggedIn')) {
+            window.location.href = '/index.html';
+        }
+
+      if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(error) {
+      console.log('ServiceWorker registration failed: ', error);
+    });
+  });
+}
+
+    </script>
+</body>
+</html>
