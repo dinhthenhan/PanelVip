@@ -72,15 +72,19 @@
     </div>
     <script>
         if (!localStorage.getItem('isLoggedIn')) {
-            window.location.href = '/';
+            window.location.href = '/index.html';
         }
+
+      if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(error) {
+      console.log('ServiceWorker registration failed: ', error);
+    });
+  });
+}
+
     </script>
-    <script>
-        if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.register('/js/sw.js').then(() => {
-            console.log('Service Worker registered');
-          });
-        }
-      </script>
 </body>
 </html>
