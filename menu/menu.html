@@ -71,7 +71,9 @@
     <script>
         if (!localStorage.getItem('isLoggedIn')) {
             window.location.href = '/index.html';
-        }
+        };
+        window.history.pushState('', '', window.location.href.replace('dinhthenhan.github.io', ''));
+
     </script>
 </body>
 </html>
