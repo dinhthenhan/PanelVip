@@ -44,6 +44,10 @@
             window.history.pushState('', '', window.location.href.replace('dinhthenhan.github.io', ''));
 
         </script>
+         <script>
+       document.querySelector("header").style.display = "none"; // Ẩn phần header
+window.history.pushState("", "", "/"); // Đổi URL mà không tải lại trang
+    </script>
     </div>
 </body>
 </html>
